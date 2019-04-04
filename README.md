@@ -44,11 +44,15 @@ Le projet comporte 6 personnes répartis sur différentes parties comme ceci :
 ##### Introduction
 
 Le Site web ManaCore est construit sous forme d'architecture modulaire à l'aide du Framework VueJS.
-La logique du est basé autour du Core permettant de gérer et de répertorier les modules pour les utilisateur.
+La logique de la partie Front de ManaCore est basé autour du Core permettant de gérer et de répertorier les modules pour les utilisateur.
 On peut le representer comme ceci :
 
+**INSERERSCHEMA**
+
 Core: Le coeur logique du site, il liste et relie les modules entre eux.
+
 Store: Les informations contenants differentes informations de l'utilisateur.
+
 Modules: Les differentes fonctionnalités que l'utilisateur décide d'acheter/activer comme par exemple le module de calendrier.
 
 ##### Structure d'un Module
@@ -70,104 +74,3 @@ Afin de mettre en place une syntaxe plus légère le code des modules utilise r�
 ## Back-end
 
 ## DevOps
-
-_Because clean code is important!_
-
-![xkcd](Documentation/images/code_quality_2.png)
-
-Even though we think that freedom is ideal, we all have to follow some coding standards.
-
-##### Functions
-
-```python
-def function(arg1, arg2, arg3, arg4):
-        do some stuff
-        if something:
-            do some other stuff
-        elif other thing:
-            do other stuff
-        else final case:
-            do thing
-    return value
-```
-
-The function above show some of the basics element of the function creation rules like, no more than 4 argument per functions, no **if forests**, no more than **80 collums**, no more than **25 lines per functions**. All this elements are more described in your handbook but help you code to be and more logical and easier to maintain.
-
-## Unit testing
-
-Unit testing is a very important part of your daily work.
-
-```python
-import unittest
-from yourfile import your_function
-
-class YourFunctionTest(unittest.TestCase):
-
-    def test_empty_string(self):
-        self.assertIs(your_function(""), True)
-
-```
-
-We provided you a basic implementation of the structure for your futures unit tests.
-
-## Version control
-
-For working in a clean environement and avoid merge conflict or branch conflict we recommand you to work with **git-flow**
-You will see that your life will become much easier !
-On each project you will work on you will find 3 branches, develop, release and master.
-Here is an exemple on how to manage you work on those different branches in a team work using gitflow.
-
-For example if you want to start a new feature on a project you will just to type:
-
-```
-git flow feature start FEATURENAME
-```
-
-![start_feature](Documentation/images/feature_start.png)
-
-Will create a new branch based on the develop branch for you and switches to it.
-
-For finishing the development of your feature you will juste have to use :
-
-```
-git flow feature FEATURENAME
-```
-
-![feature_finish](Documentation/images/feature_finish.png)
-
-It will automatically merge your branch to develop, remove the feature branch for you and switch you back to the develop branch!
-See? a lot more easier!
-
-When your work is ready to be added to the release you can start a release process by using:
-
-```
-git flow release start RELEASE
-```
-
-![start_release](Documentation/images/start_release.png)
-
-It will create a release branch created from the develop branch for preparing the merge on master.
-
-If you want other developer to be able to push on this branch use the command :
-
-```
-git flow release publish RELEASE
-```
-
-This will make your release branch public for your team.
-
-When your release branch is ready to be merge on master use
-
-```
-git flow release finish RELEASE
-```
-
-![finish_release](Documentation/images/feature_finish.png)
-
-This simple command will perform several actions, merge the release branch into master, back-merges the release into develop and finally remove the release branch.
-
-## Our Word
-
-We poured a lot of time, effort and sweat into this tutorial and we will thank **gratefully** any developer that follows those working rules !
-
-[handbook]: https://github.com/Ustarroz/SQA-Assignment-Ustarroz/Documentation/Handbook.docx
