@@ -74,4 +74,34 @@ Afin de mettre en place une syntaxe plus légère le code des modules utilise r�
 
 ## Back-end
 
+Tout les services de ManaCore sont mis en place suivant une architecture serverless herbérgé avec les services AWS. Les services sont construits sous la forme de modules par le biais de différents services.
+
+**INSERERSCHEMAARCHI**
+
+**S3**: Services de stockage ou sont stockés différents éléments de ManaCore comme les différents modules et le site web.
+
+**Lambda**: Container AWS utilisé pour run le code des différents modules.
+
+**Cloudfront**: Service web utilisé pour la distribution de contenu web dynamiquement.
+
+**Terraform**: Outil utilisé pour mettre en place l' infrastructure du projet
+
+**INSERERSCHEMAREQUETEMODULE**
+
+### Les modules
+
+L'environnement de developpement d'module ManaCore se représente de cette manière:
+
+<p align="center"> 
+<img src="images/module_archi.png">
+</p>
+
+Le dossier Functions est l'environnement ou les différentes fonctionnalités du modules sont réparties. Dans le cas du module manager en exemple:
+
+<p align="center"> 
+<img src="images/module_functions.png">
+</p>
+
+Dans le cas du module manager ses differentes fonctions prennent la forme de dossiers composé de packages Go et du fichier de code qui serras transposé en Lanmbda AWS.(plus d'information ici https://aws.amazon.com/lambda/)
+
 ## DevOps
